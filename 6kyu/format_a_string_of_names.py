@@ -1,3 +1,5 @@
+# https://www.codewars.com/kata/53368a47e38700bd8300030d
+
 def namelist(names):
     l = len(names)
     if l == 0:

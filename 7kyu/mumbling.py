@@ -1,3 +1,5 @@
+# https://www.codewars.com/kata/5667e8f4e3f572a8f2000039
+
 def accum(s):
     output = ''
     for i, c in enumerate(s):

@@ -1,7 +1,7 @@
-from operator import itemgetter
+# https://www.codewars.com/kata/5616868c81a0f281e500005c
 
-ranks = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+         'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 
 def rank(st, we, n):
@@ -16,11 +16,11 @@ def rank(st, we, n):
     for i, name in enumerate(participants):
         som = len(name)
         for c in name:
-            som += ranks.index(c.lower())+1
+            som += alpha.index(c.lower())+1
         participants[name] = som * we[i]
 
-    sorted_by_name = sorted(participants.items(), key=itemgetter(0))
-    sorted_by_value = sorted(sorted_by_name, key=itemgetter(1), reverse=True)
+    sorted_by_name = sorted(participants.items(), key=lambda x: x[0])
+    sorted_by_value = sorted(sorted_by_name, key=lambda x: x[1], reverse=True)
 
     return list(sorted_by_value)[n-1][0]
 
